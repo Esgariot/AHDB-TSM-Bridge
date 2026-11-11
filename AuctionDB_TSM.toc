@@ -1,0 +1,5 @@
+## Interface: 16001
+## Title: AHDB TSM bridge
+## Dependencies: AuctionDB
+## Version: @project-version@
+AuctionDB_TSM.lua
