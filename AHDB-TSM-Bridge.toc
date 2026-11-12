@@ -1,6 +1,6 @@
 ## Interface: 16001
 ## Title: AHDB TSM bridge
 ## Dependencies: AuctionDB
-## SavedVariables: AuctionDB_TSMSaved
+## SavedVariables: AHDB_TSM_BridgeSaved
 ## Version: @project-version@
-AuctionDB_TSM.lua
+AHDB-TSM-Bridge.lua

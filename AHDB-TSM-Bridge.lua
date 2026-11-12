@@ -42,11 +42,11 @@ local function readBids(self, e)
 end
 
 local function store(key, bids)
-  if type(AuctionDB_TSMSaved) ~= "table" then
-    if AuctionDB_TSMSaved ~= nil then report("saved bids were not a table, starting over") end
-    AuctionDB_TSMSaved = {}
+  if type(AHDB_TSM_BridgeSaved) ~= "table" then
+    if AHDB_TSM_BridgeSaved ~= nil then report("saved bids were not a table, starting over") end
+    AHDB_TSM_BridgeSaved = {}
   end
-  AuctionDB_TSMSaved[key] = bids
+  AHDB_TSM_BridgeSaved[key] = bids
 end
 
 ADB:Listen("SCAN_DATA", function(self, e)
@@ -70,7 +70,7 @@ local function lookup(self, link)
   local p = self:LastPrice(id, house)
   local scan = h.scans[#h.scans]
   local ts = scan and scan[1] or 0
-  local sv = AuctionDB_TSMSaved
+  local sv = AHDB_TSM_BridgeSaved
   local bids = type(sv) == "table" and sv[self:HouseKey(house)]
   local info = {}
   if p and p[2] and p[2] > 0 and p[1] >= ts then info.minBuyout = p[2] end
